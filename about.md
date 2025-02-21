@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Write about anything I find interesting.
+Write about something I find interesting.
