@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Write about something I find interesting.
+I am Shaoliang. I use this site to write about anything I find interesting.
