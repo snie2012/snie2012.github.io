@@ -29,6 +29,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
+google_analytics: G-6XFDDN8V4L
+
 # Build settings
 theme: minima
 plugins:
