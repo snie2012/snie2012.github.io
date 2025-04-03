@@ -258,10 +258,11 @@ Furthermore, this sparks a much wider range of questions on the design choices o
 - Optimizer choice. The optimizer is a barebone SGD in this case. What would happen if we replace it with momentum or Adam or AdamW?
 - Layer/batch normalization.
 - Type of loss. Would it make a difference to replace MSE with CE in this simple case?
+- Learning rate schedule and the effect of number of epochs. For example linear warmup + cosine decay.
 
 All the above design choices can be coupled with any of the following setups:
-- Input data complexity
-- Network architecture: MLP vs CNN vs RNN vs LSTM vs Transformer etc
+- Input data complexity.
+- Network architecture: MLP vs CNN vs RNN vs LSTM vs Transformer etc.
 - Same architecture with wider layers.
 - Same architecture with deeper layers.
 
