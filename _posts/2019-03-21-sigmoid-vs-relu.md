@@ -4,9 +4,9 @@ title:  Sigmoid vs ReLU
 date:   2019-03-21
 categories: ml
 ---
-We all know that ReLU should be used over Sigmoid for activation function, because of gradient vanishing and slow learning. But knowing something is different than seeing something in action, so I played a bit with very simple set up and found that they make a difference even in very simple set up.
+We all know that ReLU should be used over Sigmoid for activation functions because of gradient vanishing and slow learning. But knowing something is different from seeing something in action, so I played a bit with a very simple setup and found that they make a difference even in very simple setups.
 
-First, let's write a very simple MLP with Sigmoid as activation function:
+First, let's write a very simple MLP with Sigmoid as the activation function:
 ```python
 import numpy as np
 
@@ -27,8 +27,8 @@ class MLP:
       return 1 / (1 + np.exp(-z))
 
     def forward(self, X):
-      # X shape: [batch_size, num_feature]
-      # store activations and values before activations for back propogation use
+      # X shape: [batch_size, num_features]
+      # store activations and values before activations for backpropagation use
       activations = [X]
       pre_activations = []
 
@@ -42,7 +42,7 @@ class MLP:
       return pre_activations, activations
 ```
 
-Then, let's add the backpropogation pass:
+Then, let's add the backpropagation pass:
 ```python
 class MLP:
     def sigmoid_derivative(self, z):
@@ -52,8 +52,8 @@ class MLP:
       num_samples = Y.shape[0]
 
       # compute gradient of loss on the output layer of pre_activations
-      # assume it's a MSE loss
-      dz = 2 * (activations[-1] - Y) * self.relu_derivative(pre_activations[-1])
+      # assume it's an MSE loss
+      dz = 2 * (activations[-1] - Y) * self.sigmoid_derivative(pre_activations[-1])
 
       for i in range(self.num_layers - 2, -1, -1):
         # shape : (D_(L-1), D_L) = (N, D_(L-1)).T * (N, D_L)
@@ -68,7 +68,7 @@ class MLP:
         if i > 0:
           # 1. dz is in the front, weight needs to be transposed
           # 2. take the i-1 index of pre_activations (vs i index for activations and weights)
-          dz = (dz @ self.weights[i].T) * self.relu_derivative(pre_activations[i-1])
+          dz = (dz @ self.weights[i].T) * self.sigmoid_derivative(pre_activations[i-1])
 
         self.weights[i] -= learning_rate * dw
         self.biases[i] -= learning_rate * db
@@ -177,7 +177,7 @@ hidden_dims = [16, 32, 16]
 # Test Accuracy: 0.46
 ```
 
-We can see that sigmoid performs perfectly with a single hidden layer, but it can achieve no better than random guessing with two or more layers. Let's now replace the activation function with ReLU:
+We can see that Sigmoid performs perfectly with a single hidden layer, but it can achieve no better than random guessing with two or more layers. Let's now replace the activation function with ReLU:
 ```python
 class MLP:
     def relu(self, x):
@@ -247,14 +247,14 @@ hidden_dims = [16, 32, 16, 8]
 # Test Accuracy: 0.46
 ```
 
-As we can see, comparing to Sigmoid, ReLU can achieve perfect accuracy with up to 3 layers easily! Meanwhile, we can also see that the loss decrease becomes slows as the number of layers increase and it failed to converge with four hidden layers.
+As we can see, comparing to Sigmoid, ReLU can achieve perfect accuracy with up to 3 layers easily! Meanwhile, we can also see that the loss decrease becomes slower as the number of layers increases and it failed to converge with four hidden layers.
 
-It feels magical to see, even with such simple MLPs, that ReLU makes a big difference than Sigmoid. It would be very interesting to further explore the dynamics of the gradients from layer to layer, to inspect when and where they plateaued.
+It feels magical to see, even with such simple MLPs, that ReLU makes a big difference compared to Sigmoid. It would be very interesting to further explore the dynamics of the gradients from layer to layer, to inspect when and where they plateaued.
 
 Furthermore, this sparks a much wider range of questions on the design choices of modern deep neural nets, and how each of the following choices would make a difference in the training dynamics of deep neural nets:
-- Weight initialization techniques (Xavier/Kaming initialization). Even in this very simple example, ReLU would not converge if the weights are not multiplied by 0,01.
+- Weight initialization techniques (Xavier/Kaming initialization). Even in this very simple example, ReLU would not converge if the weights are not multiplied by 0.01.
 - Activation functions. There are many more to explore than ReLU, for example LeakyReLU, tanh, GeLU etc.
-- Skip connection / Residual connection. This is meants to stablize deep nets.
+- Skip connection / Residual connection. This is meant to stabilize deep nets.
 - Optimizer choice. The optimizer is a barebone SGD in this case. What would happen if we replace it with momentum or Adam or AdamW?
 - Layer/batch normalization.
 - Type of loss. Would it make a difference to replace MSE with CE in this simple case?
@@ -262,8 +262,8 @@ Furthermore, this sparks a much wider range of questions on the design choices o
 All the above design choices can be coupled with any of the following setups:
 - Input data complexity
 - Network architecture: MLP vs CNN vs RNN vs LSTM vs Transformer etc
-- Same arch with wider layers.
-- Same arch with deeper layers.
+- Same architecture with wider layers.
+- Same architecture with deeper layers.
 
-It is amazing to see how all these designs and innovations come together to enable us train very deep neural nets on very complex data effectively, and how a very simple MLP + synthetic data can relect the effectiveness of some of these design choices.
+It is amazing to see how all these designs and innovations come together to enable us to train very deep neural nets on very complex data effectively, and how a very simple MLP + synthetic data can reflect the effectiveness of some of these design choices.
 
