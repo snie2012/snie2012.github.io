@@ -4,7 +4,7 @@ title:  Flipping Mattress and Group Theory
 date:   2025-03-29
 categories: math
 ---
-I find group theory very interesting but sometimes hard to relate to everyday life. Recently, I found that flipping a mattress is actually a nice example to think about group theory.
+Relating abstract theory to everyday object is a rewarding and illuminating experience. It helps me to develop a deeper understanding of the theory, and a new look on everyday objects. Looking at mattress flipping in the lens of group theory is one of such examples in my recent experience.
 
 Imagine we have a king mattress. Let's mark its four corners as 1, 2, 3, 4. We can easily see that the mattress can only have the following 4 configurations by rotation and flipping:
 
