@@ -4,7 +4,7 @@ title:  Sigmoid vs ReLU
 date:   2019-03-21
 categories: ml
 ---
-It's well known that ReLU should be used over Sigmoid for activation functions because of gradient vanishing and slow learning. But knowing something is different from seeing it in action. I played a bit with a simple setup and found that they make a difference even in simple setups.
+It's well known that ReLU should be used over Sigmoid for activation functions because of gradient vanishing and slow learning. But knowing something is different from seeing it in action. I played a bit with a simple setup and found that they can make a difference even in these setups.
 
 First, let's write a simple MLP with Sigmoid as the activation function:
 ```python
@@ -251,7 +251,7 @@ As we can see, comparing to Sigmoid, ReLU can achieve perfect accuracy with up t
 
 It feels magical to see, even with such simple MLPs, that ReLU makes a big difference compared to Sigmoid. It would be very interesting to further explore the dynamics of the gradients from layer to layer, to inspect when and where they plateaued.
 
-Furthermore, this sparks a much wider range of questions on the design choices of modern deep neural nets, and how each of the following choices would make a difference in the training dynamics of deep neural nets:
+Furthermore, this sparks a much wider range of questions on the design choices of modern deep neural nets, and how each of the following choices would make a difference in their training dynamics:
 - Weight initialization techniques (Xavier/Kaming initialization). Even in this very simple example, ReLU would not converge if the weights are not multiplied by 0.01.
 - Activation functions. There are many more to explore than ReLU, for example LeakyReLU, tanh, GeLU etc.
 - Skip connection / Residual connection. This is meant to stabilize deep nets.
