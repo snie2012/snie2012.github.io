@@ -18,16 +18,25 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Blog
+title: Shaoliang's Blog
+# A short, human-friendly description for SEO and feeds
+# description: Personal notes, experiments, and write-ups.
 # email: your-email@example.com
 # description: >- # this means to ignore newlines until "baseurl:"
 #   Write an awesome description for your new site here. You can edit this
 #   line in _config.yml. It will appear in your document head meta (for
 #   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://snie2012.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 # twitter_username: jekyllrb
 # github_username:  jekyll
+
+# Social handles (used by jekyll-seo-tag if present in layouts)
+author:
+  name: Shaoliang Nie
+  url: https://snie2012.github.io
+  github: snie2012
+  # twitter: your_twitter
 
 google_analytics: G-6XFDDN8V4L
 
@@ -35,6 +44,11 @@ google_analytics: G-6XFDDN8V4L
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+
+# Ensure Jekyll processes the .well-known directory
+include:
+  - .well-known
 
 # Exclude from processing.
 # The following items will not be processed, by default.
