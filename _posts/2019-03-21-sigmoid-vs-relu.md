@@ -4,7 +4,7 @@ title:  Sigmoid vs ReLU
 date:   2019-03-21
 categories: ml
 ---
-It's well known that ReLU should be used over Sigmoid for activation functions because of gradient vanishing and slow learning. But knowing something is different from seeing it in action. I played a bit with a simple setup and found that they can make a difference even in these setups.
+It's well known that ReLU should be used over Sigmoid for activation functions because of gradient vanishing and slow learning. I played a bit with a simple setup to see their effectiveness.
 
 First, let's write a simple MLP with Sigmoid as the activation function:
 ```python
