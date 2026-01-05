@@ -266,5 +266,5 @@ All the above design choices can be coupled with any of the following setups:
 - Same architecture with wider layers.
 - Same architecture with deeper layers.
 
-It is amazing to see how all these designs and innovations come together to enable us to train very deep neural nets on very complex data effectively, and how a very simple MLP + synthetic data can reflect the effectiveness of some of these design choices.
+It is amazingly simple to see how all these designs and innovations come together to enable us to train very deep neural nets on very complex data effectively, and how a very simple MLP + synthetic data can reflect the effectiveness of some of these design choices.
 
