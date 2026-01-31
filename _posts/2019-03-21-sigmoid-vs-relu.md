@@ -3,6 +3,7 @@ layout: post
 title:  Sigmoid vs ReLU
 date:   2019-03-21
 categories: ml
+description: A hands-on comparison of Sigmoid and ReLU activation functions in neural networks, demonstrating gradient vanishing issues with deeper layers.
 ---
 It's well known that ReLU should be used over Sigmoid for activation functions because of gradient vanishing and slow learning. I played a bit with a simple setup to see their effectiveness.
 

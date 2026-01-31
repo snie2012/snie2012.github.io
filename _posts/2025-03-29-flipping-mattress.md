@@ -3,6 +3,7 @@ layout: post
 title:  Flipping Mattress and Group Theory
 date:   2025-03-29
 categories: math
+description: An intuitive introduction to group theory using mattress flipping as an example, exploring symmetry, Cayley diagrams, and mathematical structure.
 ---
 Imagine we have a king mattress. Let's mark its four corners as 1, 2, 3, 4. We can easily see that the mattress can only have the following 4 configurations by rotation and flipping:
 
