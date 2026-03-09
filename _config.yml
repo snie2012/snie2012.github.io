@@ -20,7 +20,7 @@
 
 title: Shaoliang's Blog
 # A short, human-friendly description for SEO and feeds
-# description: Personal notes, experiments, and write-ups.
+description: Personal notes on software, mathematics, and everyday observations.
 # email: your-email@example.com
 # description: >- # this means to ignore newlines until "baseurl:"
 #   Write an awesome description for your new site here. You can edit this
@@ -37,6 +37,12 @@ author:
   url: https://snie2012.github.io
   github: snie2012
   # twitter: your_twitter
+
+minima:
+  social_links:
+    - title: GitHub
+      icon: github
+      url: https://github.com/snie2012
 
 google_analytics: G-6XFDDN8V4L
 
