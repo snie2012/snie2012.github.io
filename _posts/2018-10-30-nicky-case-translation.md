@@ -3,6 +3,7 @@ layout: post
 title:  Chinese Translation of Nicky Case's Work
 date:   2018-10-20
 categories: misc
+description: Chinese translations of Nicky Case's interactive simulations on firefly synchronization and memory techniques.
 ---
 I have been a fan of [Nicky Case](https://ncase.me/)'s work. It's been inspiring to see how simulations can bring complex systems to life, deepen the understanding of those systems in an interactive way, and all coded with modern web technologies that make them easily accessible.
 
